@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.hephzibah.schedulerapp.ui.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_clientDetailFragment"
+            app:destination="@id/clientDetailFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_eventDetailFragment2"
+            app:destination="@id/eventDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clientDetailFragment"
+        android:name="com.hephzibah.schedulerapp.ui.clientDetails.ClientDetailFragment"
+        android:label="fragment_client_detail"
+        tools:layout="@layout/fragment_client_detail" >
+        <argument
+            android:name="client"
+            app:argType="com.hephzibah.schedulerapp.data.model.Client"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="com.hephzibah.schedulerapp.ui.eventDetails.EventDetailFragment"
+        android:label="fragment_event_detail"
+        tools:layout="@layout/fragment_event_detail" >
+        <argument
+            android:name="event"
+            app:argType="com.hephzibah.schedulerapp.data.model.Event"
+            app:nullable="true" />
+    </fragment>
+
+</navigation>
