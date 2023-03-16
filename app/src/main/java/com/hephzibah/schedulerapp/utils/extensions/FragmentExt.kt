@@ -32,8 +32,6 @@ fun Fragment.displayTimePicker(editText: TextInputEditText, timeSelected: (Strin
     val timePicker = MaterialTimePicker.Builder()
         .setTitleText(AppConstants.SELECT_TIME)
         .setTimeFormat(TimeFormat.CLOCK_24H)
-        .setHour(12)
-        .setMinute(10)
         .build()
     timePicker.show(this.parentFragmentManager, AppConstants.TIME_PICKER)
     timePicker.addOnPositiveButtonClickListener {

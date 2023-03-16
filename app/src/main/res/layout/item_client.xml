@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_12"
         android:fontFamily="@font/tienne"
-        android:paddingVertical="@dimen/dimen_20"
+        android:paddingVertical="@dimen/dimen_15"
         android:paddingStart="@dimen/dimen_12"
         android:paddingEnd="@dimen/dimen_12"
         android:textColor="@color/black"

@@ -10,6 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/dimen_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginVertical="@dimen/dimen_20">
 
         <ImageView
@@ -25,11 +29,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_20"
-            android:fontFamily="@font/nunito_sans"
-            android:textAlignment="center"
+            android:fontFamily="monospace"
             android:text="@string/client"
+            android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
+            android:textSize="@dimen/dimen_15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/note"
@@ -40,54 +44,51 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_20"
-            android:fontFamily="@font/nunito_sans"
-            android:textAlignment="center"
+            android:fontFamily="@font/tienne"
             android:textColor="@color/black"
             android:textSize="@dimen/dimen_15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/client"
-            tools:text="Name" />
+            tools:text="name" />
 
         <TextView
             android:id="@+id/gender"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_20"
-            android:fontFamily="@font/nunito_sans"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:fontFamily="@font/tienne"
             android:textColor="@color/black"
             android:textSize="@dimen/dimen_15sp"
-            app:layout_constraintEnd_toStartOf="@+id/age"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/name"
             tools:text="gender" />
 
         <TextView
+            android:layout_marginTop="@dimen/dimen_10"
             android:id="@+id/age"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_sans"
+            android:fontFamily="@font/tienne"
             android:textColor="@color/black"
             android:textSize="@dimen/dimen_15sp"
-            app:layout_constraintEnd_toStartOf="@+id/email"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/gender"
-            app:layout_constraintTop_toTopOf="@id/gender"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gender"
             tools:text="age" />
 
         <TextView
             android:id="@+id/email"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/dimen_10"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_sans"
+            android:fontFamily="@font/tienne"
             android:textColor="@color/black"
             android:textSize="@dimen/dimen_15sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/age"
-            app:layout_constraintTop_toTopOf="@id/age"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/age"
             tools:text="email" />
 
         <TextView
@@ -106,12 +107,11 @@
 
         <TextView
             android:id="@+id/date"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_30"
             android:drawablePadding="@dimen/dimen_10"
-            android:fontFamily="@font/nunito_sans"
-            android:textAlignment="center"
+            android:fontFamily="@font/tienne"
             android:textColor="@color/black"
             android:textSize="@dimen/dimen_15sp"
             android:textStyle="italic"
@@ -134,38 +134,35 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/startDate"
-            tools:text="Notes" />
+            tools:text="notes" />
 
         <TextView
             android:id="@+id/to"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_sans"
+            android:fontFamily="@font/tienne"
             android:paddingHorizontal="@dimen/dimen_5"
-            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="@dimen/dimen_15sp"
             android:text="@string/to"
             android:textStyle="italic"
-            app:layout_constraintEnd_toStartOf="@+id/endDate"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/startDate"
             app:layout_constraintTop_toTopOf="@+id/startDate"
-            tools:text="To" />
+            tools:text="to" />
 
         <TextView
             android:id="@+id/startDate"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:paddingEnd="@dimen/dimen_8"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_20"
-            android:fontFamily="@font/nunito_sans"
-            android:paddingHorizontal="@dimen/dimen_5"
-            android:textAlignment="center"
+            android:fontFamily="@font/tienne"
             android:textColor="@color/black"
             android:textSize="@dimen/dimen_15sp"
+          android:drawablePadding="@dimen/dimen_8"
             android:textStyle="italic"
             app:drawableStartCompat="@drawable/ic_access_time"
-            app:layout_constraintEnd_toStartOf="@+id/to"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
@@ -174,11 +171,10 @@
 
         <TextView
             android:id="@+id/endDate"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_sans"
+            android:fontFamily="@font/tienne"
             android:paddingHorizontal="@dimen/dimen_5"
-            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="@dimen/dimen_15sp"
             android:textStyle="italic"

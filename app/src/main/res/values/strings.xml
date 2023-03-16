@@ -13,12 +13,15 @@
     <string name="end_time">End time</string>
     <string name="start_time">Start time</string>
     <string name="empty_event">You do not have any upcoming event. Kindly add new events</string>
-    <string name="event">Your event is as follow:</string>
+    <string name="event">Your event is as follows:</string>
     <string name="upcoming_event">Upcoming event on:</string>
-    <string name="age">%1$s years</string>
+    <string name="age">Age: %1$s years</string>
+    <string name="gender">Gender: %1$s</string>
+    <string name="email">Email: %1$s</string>
+    <string name="name">Name: %1$s</string>
     <string name="required">All fields are required</string>
-    <string name="to">To</string>
-    <string name="client">Your client:</string>
+    <string name="to">to</string>
+    <string name="client">Your client details : </string>
     <string name="events">Events</string>
     <string name="clients">Clients</string>
 </resources>
