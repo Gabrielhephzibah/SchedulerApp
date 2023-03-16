@@ -10,11 +10,13 @@ class EventViewHolder(
     private val binding: ItemEventBinding,
     onItemClick: (Int) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
+
     init {
         binding.root.setOnClickListener {
             onItemClick(adapterPosition)
         }
     }
+
     fun bind(item: Event) {
         binding.date.text = item.date
     }

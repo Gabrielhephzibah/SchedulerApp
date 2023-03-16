@@ -1,40 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="20dp"
-        android:padding="20dp"
+        android:layout_marginHorizontal="@dimen/dimen_10"
+        android:layout_marginVertical="@dimen/dimen_10"
+        android:padding="@dimen/dimen_20"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Upcoming event on:"
-            android:textSize="15sp"
             android:fontFamily="@font/tienne"
+            android:text="@string/upcoming_event"
             android:textColor="@color/black"
+            android:textSize="@dimen/dimen_15sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="12/23/2020"
-            android:drawablePadding="5dp"
-            android:textSize="15sp"
-            app:drawableStartCompat="@drawable/ic_event_available"
+            android:drawablePadding="@dimen/dimen_5"
             android:fontFamily="@font/tienne"
             android:textColor="@color/black"
-            />
+            android:textSize="@dimen/dimen_15sp"
+            app:drawableStartCompat="@drawable/ic_event_available"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="12/3/2023" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

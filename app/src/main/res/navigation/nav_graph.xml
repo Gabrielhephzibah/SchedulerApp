@@ -7,35 +7,34 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.hephzibah.schedulerapp.ui.MainFragment"
+        android:name="com.hephzibah.schedulerapp.ui.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_clientDetailFragment"
             app:destination="@id/clientDetailFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_eventDetailFragment2"
-            app:destination="@id/eventDetailFragment" />
+            android:id="@+id/action_mainFragment_to_eventDetailsFragment"
+            app:destination="@id/eventDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/clientDetailFragment"
         android:name="com.hephzibah.schedulerapp.ui.clientDetails.ClientDetailFragment"
         android:label="fragment_client_detail"
-        tools:layout="@layout/fragment_client_detail" >
+        tools:layout="@layout/fragment_client_detail">
         <argument
             android:name="client"
             app:argType="com.hephzibah.schedulerapp.data.model.Client"
             app:nullable="true" />
     </fragment>
     <fragment
-        android:id="@+id/eventDetailFragment"
-        android:name="com.hephzibah.schedulerapp.ui.eventDetails.EventDetailFragment"
-        android:label="fragment_event_detail"
-        tools:layout="@layout/fragment_event_detail" >
+        android:id="@+id/eventDetailsFragment"
+        android:name="com.hephzibah.schedulerapp.ui.eventDetails.EventDetailsFragment"
+        android:label="fragment_event_details"
+        tools:layout="@layout/fragment_event_details">
         <argument
             android:name="event"
             app:argType="com.hephzibah.schedulerapp.data.model.Event"
             app:nullable="true" />
     </fragment>
-
 </navigation>

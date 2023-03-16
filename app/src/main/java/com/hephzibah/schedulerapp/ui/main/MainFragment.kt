@@ -1,4 +1,4 @@
-package com.hephzibah.schedulerapp.ui
+package com.hephzibah.schedulerapp.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 
 
 import com.google.android.material.tabs.TabLayoutMediator
+import com.hephzibah.schedulerapp.R
 import com.hephzibah.schedulerapp.databinding.FragmentMainBinding
 
 
@@ -17,7 +18,6 @@ class MainFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -37,13 +37,11 @@ class MainFragment : Fragment() {
         binding.viewPager.adapter = FragmentAdapter(this)
         TabLayoutMediator(binding.tabLayout, binding.viewPager){tab, position ->
            when(position){
-               0 -> tab.text = "Events"
-               1 -> tab.text = "Clients"
+               0 -> tab.text = getString(R.string.events)
+               1 -> tab.text = getString(R.string.clients)
            }
         }.attach()
-
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -1,4 +1,4 @@
-package com.hephzibah.schedulerapp.ui
+package com.hephzibah.schedulerapp.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

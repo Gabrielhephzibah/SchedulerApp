@@ -26,7 +26,6 @@ class EventAdapter(private val onItemClick: (Event?) -> Unit) :
         getItem(position)?.let { item -> holder.bind(item) }
     }
 
-
     object EventComparator : DiffUtil.ItemCallback<Event>() {
         override fun areItemsTheSame(
             oldItem: Event,

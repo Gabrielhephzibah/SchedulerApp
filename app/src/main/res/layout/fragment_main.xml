@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainFragment">
+    tools:context=".ui.main.MainFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
@@ -17,7 +17,7 @@
         app:tabTextColor="@color/black"
         app:tabBackground="@color/tab_bg"
         app:tabSelectedTextColor="@color/purple_700"
-        app:tabIndicatorColor="@color/teal_700"/>
+        app:tabIndicatorColor="@color/purple_700"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
