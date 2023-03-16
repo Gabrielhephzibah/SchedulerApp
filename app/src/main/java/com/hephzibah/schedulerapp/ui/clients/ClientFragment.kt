@@ -7,13 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-
-
-
-import com.hephzibah.schedulerapp.data.model.Client
 import com.hephzibah.schedulerapp.databinding.FragmentClientBinding
-
-import com.hephzibah.schedulerapp.ui.MainFragmentDirections
+import com.hephzibah.schedulerapp.ui.main.MainFragmentDirections
 
 
 class ClientFragment : Fragment() {
@@ -49,10 +44,7 @@ class ClientFragment : Fragment() {
     }
 
     private  fun setClient(){
-        val getClient = viewModel.getClient()
-        val item = getClient.map {
-            Client(it.id,it.name, it.location, it.gender,it.occupation,it.age, it.email)
-        }
+        val item = viewModel.getClient()
         adapter?.submitList(item)
     }
 

@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.hephzibah.schedulerapp.data.model.Event
 import com.hephzibah.schedulerapp.databinding.FragmentEventBinding
-import com.hephzibah.schedulerapp.ui.MainFragmentDirections
+import com.hephzibah.schedulerapp.ui.main.MainFragmentDirections
 import com.hephzibah.schedulerapp.utils.extensions.collectLatest
 
 
@@ -36,13 +36,12 @@ class EventFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setUpAdapter()
         getEvent()
-
     }
 
     private fun setUpAdapter() {
         adapter = EventAdapter {
             findNavController().navigate(
-                MainFragmentDirections.actionMainFragmentToEventDetailFragment2(it)
+                MainFragmentDirections.actionMainFragmentToEventDetailsFragment(it)
             )
         }
         binding.recyclerView.adapter = adapter
@@ -57,25 +56,7 @@ class EventFragment : Fragment() {
 
     private fun setEvent(response: List<Event>) {
         if (response.isEmpty()) binding.emptyEvent.visibility = View.VISIBLE else adapter?.submitList(response)
-
     }
-
-//    private fun getnew() {
-//        println("getcalled::::")
-//        viewLifecycleOwner.lifecycleScope.launch {
-//            println("HERELaunch")
-//            repeatOnLifecycle(Lifecycle.State.STARTED) {
-//                viewModel.getAllEvent().collectLatest {
-//                    println("EVENT::::$it")
-//                }
-//            }
-//        }
-//    }
-
-//    private fun setEvents(response: Event) {
-//        println("EVENT::: $response")
-//
-//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

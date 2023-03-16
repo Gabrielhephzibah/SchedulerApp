@@ -7,9 +7,7 @@ import kotlinx.parcelize.Parcelize
 data class Client(
     val id : String?,
     val name: String?,
-    val location: String?,
     val gender: String?,
-    val occupation: String?, // TODO: change text to profession
     val age: String?,
     val email: String?,
 ): Parcelable
