@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="schedule_event">Schedule event</string>
-    <string name="pick_date">Pick a day is convenient for you</string>
+    <string name="pick_day">Pick a day that is convenient for you</string>
     <string name="date">date</string>
     <string name="add_note">Add a short note for the event</string>
     <string name="note">add a note</string>
