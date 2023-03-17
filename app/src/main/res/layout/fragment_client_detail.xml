@@ -109,27 +109,27 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/dayPicker"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="0dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_height="wrap_content"
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidth="1dp"
+            app:endIconTint="@color/black"
             android:textColorHint="@color/black"
             app:hintTextColor="@color/black"
+            android:hint="@string/pick_a_day"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text1">
 
-            <EditText
-                android:id="@+id/pickDate"
+            <AutoCompleteTextView
+                android:id="@+id/pickDay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clickable="false"
-                android:drawableEnd="@drawable/ic_calendar_month"
-                android:hint="@string/date"
-                android:textColor="@color/black"
                 android:cursorVisible="false"
-                android:focusable="false" />
+                android:textColor="@color/black"
+                android:focusable="false"
+                android:clickable="false"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

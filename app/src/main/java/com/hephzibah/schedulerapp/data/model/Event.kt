@@ -9,5 +9,5 @@ data class Event(
     val note: String?,
     val startTime: String?,
     val endTime: String?,
-    val date: String?
+    val day: String?
 ): Parcelable

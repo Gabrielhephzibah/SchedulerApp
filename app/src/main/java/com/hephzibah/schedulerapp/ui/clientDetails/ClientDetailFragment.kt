@@ -4,20 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.hephzibah.schedulerapp.R
 import com.hephzibah.schedulerapp.data.model.Client
 import com.hephzibah.schedulerapp.data.model.Event
+import com.hephzibah.schedulerapp.databinding.FragmentClientDetailBinding
 import com.hephzibah.schedulerapp.ui.events.EventViewModel
-import com.hephzibah.schedulerapp.utils.extensions.displayDatePicker
 import com.hephzibah.schedulerapp.utils.extensions.displayTimePicker
 import com.hephzibah.schedulerapp.utils.extensions.displayToast
-import com.hephzibah.schedulerapp.R
-import com.hephzibah.schedulerapp.databinding.FragmentClientDetailBinding
 
 
 class ClientDetailFragment : Fragment() {
@@ -25,13 +25,13 @@ class ClientDetailFragment : Fragment() {
     private val binding get() = _binding!!
     private val args: ClientDetailFragmentArgs by navArgs()
     private lateinit var viewModel: EventViewModel
-    private var date: String? = null
     private var startTime: String? = null
     private var endTime: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(requireActivity())[EventViewModel::class.java]
+
     }
 
     override fun onCreateView(
@@ -46,7 +46,7 @@ class ClientDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         onBackClick()
         getClientDetails()
-        selectDate()
+        setUpDropDownAdapter()
         selectStartTime()
         selectEndTime()
         scheduleEvent()
@@ -58,14 +58,6 @@ class ClientDetailFragment : Fragment() {
         binding.gender.text = details?.gender
         binding.age.text = getString(R.string.years, details?.age)
         binding.email.text = details?.email
-    }
-
-    private fun selectDate() {
-        binding.pickDate.setOnClickListener {
-            displayDatePicker(it as EditText) { input ->
-                date = input
-            }
-        }
     }
 
     private fun selectStartTime() {
@@ -84,13 +76,19 @@ class ClientDetailFragment : Fragment() {
         }
     }
 
+    private fun setUpDropDownAdapter() {
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, resources.getStringArray(R.array.days_of_the_week))
+        binding.pickDay.setAdapter(adapter)
+    }
+
     private fun scheduleEvent() {
         binding.scheduleBtn.setOnClickListener {
             val note = binding.addNote.text.toString()
-            if (!date.isNullOrEmpty() && !startTime.isNullOrEmpty() && !endTime.isNullOrEmpty() && !note.isNullOrEmpty()) {
+            val day = binding.pickDay.text.toString()
+            if (day.isNotEmpty() && !startTime.isNullOrEmpty() && !endTime.isNullOrEmpty() && note.isNotEmpty()) {
                 val newEvent = Event(Client(
                         args.client?.id, args.client?.name,
-                        args.client?.gender, args.client?.age, args.client?.email), note, startTime, endTime, date)
+                        args.client?.gender, args.client?.age, args.client?.email), note, startTime, endTime,day)
                 viewModel.addNewEvent(newEvent)
                 findNavController().popBackStack()
             } else {

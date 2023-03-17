@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="schedule_event">Schedule event</string>
-    <string name="pick_date">Pick a day and date is convenient for you</string>
+    <string name="pick_date">Pick a day is convenient for you</string>
     <string name="date">date</string>
     <string name="add_note">Add a short note for the event</string>
     <string name="note">add a note</string>
@@ -16,7 +16,7 @@
     <string name="pick_end_time">end time</string>
     <string name="empty_event">You do not have any upcoming event. Kindly add new events</string>
     <string name="event">Your event is as follows:</string>
-    <string name="upcoming_event">Upcoming event on:</string>
+    <string name="upcoming_event">Upcoming event on :</string>
     <string name="age">Age: %1$s years</string>
     <string name="years">%1$s years</string>
     <string name="gender">Gender: %1$s</string>
@@ -27,4 +27,14 @@
     <string name="client">Your client details : </string>
     <string name="events">Events</string>
     <string name="clients">Clients</string>
+    <string name="pick_a_day">pick a day</string>
+    <string-array name="days_of_the_week">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
 </resources>

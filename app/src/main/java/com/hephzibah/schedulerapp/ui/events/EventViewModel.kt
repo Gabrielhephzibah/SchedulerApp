@@ -22,7 +22,7 @@ class EventViewModel : ViewModel() {
                         event.client.gender,
                         event.client.age,
                         event.client.email
-                    ), event.note, event.startTime, event.endTime, event.date
+                    ), event.note, event.startTime, event.endTime, event.day
                 )
             )
             _getEvents.value = tempList

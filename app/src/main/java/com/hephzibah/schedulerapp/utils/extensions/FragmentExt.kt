@@ -2,31 +2,10 @@ package com.hephzibah.schedulerapp.utils.extensions
 
 import android.widget.EditText
 import androidx.fragment.app.Fragment
-import com.google.android.material.datepicker.CalendarConstraints
-import com.google.android.material.datepicker.DateValidatorPointForward
-import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import com.hephzibah.schedulerapp.utils.AppConstants
-import java.text.SimpleDateFormat
-import java.util.*
 
-
-fun Fragment.displayDatePicker(editText: EditText, dateSelected: (String) -> Unit) {
-    val constraintsBuilder =
-        CalendarConstraints.Builder().setValidator(DateValidatorPointForward.now())
-    val picker = MaterialDatePicker.Builder.datePicker()
-        .setTitleText(AppConstants.SELECT_DATE)
-        .setCalendarConstraints(constraintsBuilder.build())
-        .build()
-    picker.show(this.parentFragmentManager, AppConstants.DATE_PICKER)
-    picker.addOnPositiveButtonClickListener {
-        val dateStamp = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-        val date = dateStamp.format(it)
-        editText.setText(date)
-        dateSelected(date)
-    }
-}
 
 fun Fragment.displayTimePicker(editText: EditText, timeSelected: (String) -> Unit) {
     val timePicker = MaterialTimePicker.Builder()
