@@ -1,10 +1,10 @@
 package com.hephzibah.schedulerapp.utils.extensions
 
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
-import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import com.hephzibah.schedulerapp.utils.AppConstants
@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-fun Fragment.displayDatePicker(editText: TextInputEditText, dateSelected: (String) -> Unit) {
+fun Fragment.displayDatePicker(editText: EditText, dateSelected: (String) -> Unit) {
     val constraintsBuilder =
         CalendarConstraints.Builder().setValidator(DateValidatorPointForward.now())
     val picker = MaterialDatePicker.Builder.datePicker()
@@ -28,10 +28,13 @@ fun Fragment.displayDatePicker(editText: TextInputEditText, dateSelected: (Strin
     }
 }
 
-fun Fragment.displayTimePicker(editText: TextInputEditText, timeSelected: (String) -> Unit) {
+fun Fragment.displayTimePicker(editText: EditText, timeSelected: (String) -> Unit) {
     val timePicker = MaterialTimePicker.Builder()
         .setTitleText(AppConstants.SELECT_TIME)
+        .setInputMode(MaterialTimePicker.INPUT_MODE_CLOCK)
         .setTimeFormat(TimeFormat.CLOCK_24H)
+        .setHour(12)
+        .setMinute(10)
         .build()
     timePicker.show(this.parentFragmentManager, AppConstants.TIME_PICKER)
     timePicker.addOnPositiveButtonClickListener {

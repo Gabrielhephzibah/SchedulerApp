@@ -9,7 +9,8 @@ object ClientRepository {
         Client("2","Joe Phillips",  "Male",  "39", "joe@gmail.com"),
         Client("3","Mark Zain",  "Male", "40", "mark@gmail.com"),
         Client("4", "Sara Stone", "Female", "12", "sarah@gmail.com"),
-        Client("5", "John Doe", "Male", "67", "john@gmail.com"))
+        Client("5", "John Doe", "Male", "67", "john@gmail.com"),
+        Client("6", "Zara Spring", "Female", "54", "zara@gmail.com"))
 
     fun getClients(): List<Client>{
       return  clients

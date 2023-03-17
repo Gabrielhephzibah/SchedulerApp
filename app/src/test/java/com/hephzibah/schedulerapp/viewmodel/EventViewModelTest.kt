@@ -1,6 +1,5 @@
 package com.hephzibah.schedulerapp.viewmodel
 
-import com.hephzibah.schedulerapp.data.model.Client
 import com.hephzibah.schedulerapp.data.model.Event
 import com.hephzibah.schedulerapp.model.EventTest
 import com.hephzibah.schedulerapp.ui.events.EventViewModel

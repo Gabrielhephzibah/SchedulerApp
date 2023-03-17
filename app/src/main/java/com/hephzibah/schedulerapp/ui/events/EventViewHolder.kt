@@ -1,9 +1,7 @@
 package com.hephzibah.schedulerapp.ui.events
 
 import androidx.recyclerview.widget.RecyclerView
-import com.hephzibah.schedulerapp.data.model.Client
 import com.hephzibah.schedulerapp.data.model.Event
-import com.hephzibah.schedulerapp.databinding.ItemClientBinding
 import com.hephzibah.schedulerapp.databinding.ItemEventBinding
 
 class EventViewHolder(

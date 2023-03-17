@@ -1,7 +1,6 @@
 package com.hephzibah.schedulerapp.ui.clients
 
 import androidx.recyclerview.widget.RecyclerView
-
 import com.hephzibah.schedulerapp.data.model.Client
 import com.hephzibah.schedulerapp.databinding.ItemClientBinding
 
