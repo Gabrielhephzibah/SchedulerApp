@@ -16,6 +16,6 @@ class EventViewHolder(
     }
 
     fun bind(item: Event) {
-        binding.date.text = item.date
+        binding.date.text = item.day
     }
 }

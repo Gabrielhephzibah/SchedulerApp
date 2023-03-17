@@ -41,7 +41,7 @@ class EventDetailsFragment : Fragment() {
         binding.gender.text = getString(R.string.gender, details?.client?.gender)
         binding.age.text = getString(R.string.age, details?.client?.age)
         binding.email.text = getString(R.string.email, details?.client?.email)
-        binding.date.text = details?.date
+        binding.date.text = details?.day
         binding.startDate.text = details?.startTime
         binding.endDate.text = details?.endTime
         binding.note.text = details?.note
