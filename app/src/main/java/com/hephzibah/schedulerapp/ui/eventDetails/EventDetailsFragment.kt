@@ -8,9 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.hephzibah.schedulerapp.R
-import com.hephzibah.schedulerapp.databinding.FragmentClientBinding
 import com.hephzibah.schedulerapp.databinding.FragmentEventDetailsBinding
-import com.hephzibah.schedulerapp.ui.clientDetails.ClientDetailFragmentArgs
 
 
 class EventDetailsFragment : Fragment() {
@@ -39,10 +37,10 @@ class EventDetailsFragment : Fragment() {
 
     private fun getEventDetails() {
         val details = args.event
-        binding.name.text = details?.client?.name
-        binding.gender.text = details?.client?.gender
+        binding.name.text = getString(R.string.name, details?.client?.name)
+        binding.gender.text = getString(R.string.gender, details?.client?.gender)
         binding.age.text = getString(R.string.age, details?.client?.age)
-        binding.email.text = details?.client?.email
+        binding.email.text = getString(R.string.email, details?.client?.email)
         binding.date.text = details?.date
         binding.startDate.text = details?.startTime
         binding.endDate.text = details?.endTime

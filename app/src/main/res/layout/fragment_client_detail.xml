@@ -4,13 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.clientDetails.ClientDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/dimen_20"
-        android:layout_marginVertical="@dimen/dimen_20">
+        android:layout_marginVertical="@dimen/dimen_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
             android:id="@+id/back_arrow"
@@ -107,18 +112,22 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/date"
-            app:endIconDrawable="@drawable/ic_calendar_month"
-            app:endIconMode="custom"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="1dp"
+            android:textColorHint="@color/black"
+            app:hintTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text1">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/pickDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="false"
+                android:drawableEnd="@drawable/ic_calendar_month"
+                android:hint="@string/date"
+                android:textColor="@color/black"
                 android:cursorVisible="false"
                 android:focusable="false" />
 
@@ -138,19 +147,37 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dayPicker" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/note"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="0dp"
-            android:layout_height="@dimen/dimen_48"
-            android:layout_marginTop="@dimen/dimen_10"
-            android:drawableStart="@drawable/ic_note"
-            android:drawablePadding="@dimen/dimen_12"
-            android:hint="@string/note"
-            android:maxLines="1"
-            android:singleLine="true"
+            android:layout_height="wrap_content"
+            app:endIconMode="custom"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="1dp"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text3" />
+            app:layout_constraintTop_toBottomOf="@id/text3">
+
+            <EditText
+                android:id="@+id/addNote"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_48"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:drawableStart="@drawable/ic_edit_note"
+                android:drawablePadding="@dimen/dimen_12"
+                android:hint="@string/note"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:backgroundTint="@color/black"
+                android:singleLine="true"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
         <TextView
@@ -185,19 +212,23 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimen_10"
-            android:hint="@string/time"
-            app:endIconDrawable="@drawable/ic_access_time"
-            app:endIconMode="custom"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="1dp"
+            android:textColorHint="@color/black"
+            app:hintTextColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/mStartTime"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/mStartTime"
             app:layout_constraintTop_toTopOf="@id/mStartTime">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/startTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="false"
+                android:drawableEnd="@drawable/ic_access_time"
+                android:hint="@string/pick_start_time"
+                android:textColor="@color/black"
                 android:cursorVisible="false"
                 android:focusable="false" />
 
@@ -221,19 +252,23 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimen_10"
-            android:hint="@string/time"
-            app:endIconDrawable="@drawable/ic_access_time"
-            app:endIconMode="custom"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="1dp"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/mEndTime"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/mEndTime"
             app:layout_constraintTop_toTopOf="@id/mEndTime">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/endTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="false"
+                android:drawableEnd="@drawable/ic_access_time"
+                android:hint="@string/pick_end_time"
+                android:textColor="@color/black"
                 android:cursorVisible="false"
                 android:focusable="false" />
 

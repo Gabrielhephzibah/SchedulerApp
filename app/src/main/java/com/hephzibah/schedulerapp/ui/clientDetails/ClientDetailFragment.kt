@@ -4,21 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-
-
 import com.hephzibah.schedulerapp.data.model.Client
 import com.hephzibah.schedulerapp.data.model.Event
-
 import com.hephzibah.schedulerapp.ui.events.EventViewModel
 import com.hephzibah.schedulerapp.utils.extensions.displayDatePicker
 import com.hephzibah.schedulerapp.utils.extensions.displayTimePicker
 import com.hephzibah.schedulerapp.utils.extensions.displayToast
-import com.google.android.material.textfield.TextInputEditText
 import com.hephzibah.schedulerapp.R
 import com.hephzibah.schedulerapp.databinding.FragmentClientDetailBinding
 
@@ -59,13 +56,13 @@ class ClientDetailFragment : Fragment() {
         val details = args.client
         binding.name.text = details?.name
         binding.gender.text = details?.gender
-        binding.age.text = getString(R.string.age, details?.age)
+        binding.age.text = getString(R.string.years, details?.age)
         binding.email.text = details?.email
     }
 
     private fun selectDate() {
         binding.pickDate.setOnClickListener {
-            displayDatePicker(it as TextInputEditText) { input ->
+            displayDatePicker(it as EditText) { input ->
                 date = input
             }
         }
@@ -73,7 +70,7 @@ class ClientDetailFragment : Fragment() {
 
     private fun selectStartTime() {
         binding.startTime.setOnClickListener {
-            displayTimePicker(it as TextInputEditText) { input ->
+            displayTimePicker(it as EditText) { input ->
                 startTime = input
             }
         }
@@ -81,7 +78,7 @@ class ClientDetailFragment : Fragment() {
 
     private fun selectEndTime() {
         binding.endTime.setOnClickListener {
-            displayTimePicker(it as TextInputEditText) { input ->
+            displayTimePicker(it as EditText) { input ->
                 endTime = input
             }
         }
@@ -89,7 +86,7 @@ class ClientDetailFragment : Fragment() {
 
     private fun scheduleEvent() {
         binding.scheduleBtn.setOnClickListener {
-            val note = binding.note.text.toString()
+            val note = binding.addNote.text.toString()
             if (!date.isNullOrEmpty() && !startTime.isNullOrEmpty() && !endTime.isNullOrEmpty() && !note.isNullOrEmpty()) {
                 val newEvent = Event(Client(
                         args.client?.id, args.client?.name,
