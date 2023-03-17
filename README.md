@@ -33,7 +33,7 @@ The app has the following structure
 git clone https://github.com/Gabrielhephzibah/SchedulerApp.git
 
 ```
-3. You can also open the zip file of the project
+3. You can also download the zip file
 
 4. Import or open the project on Android Studio
 
@@ -52,9 +52,9 @@ git clone https://github.com/Gabrielhephzibah/SchedulerApp.git
 * Story 4: On the left tab, the user should find the simple table with upcoming events
 * Story 5: Every event should lead to the event details page where you can find following
    information about the event:
-- Client details
-- Start and end time of the event
-- Notes for the event
+  - Client details
+  - Start and end time of the event
+  - Notes for the event
 
 
 # Copyright
